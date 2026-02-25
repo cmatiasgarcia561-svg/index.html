@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cristiano Ronaldo Fan Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background: #0b0b0b; color: white; }
+    header { background: linear-gradient(135deg, #111, #222); padding: 20px 40px; position: sticky; top: 0; z-index: 10; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
+    nav a:hover { color: gold; }
+
+    .hero { height: 90vh; background: url('https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg') center/cover no-repeat; display: flex; align-items: center; padding: 40px; }
+    .hero-box { background: rgba(0,0,0,0.6); padding: 30px; border-radius: 12px; max-width: 500px; }
+    .hero h1 { font-size: 48px; }
+    .hero p { margin-top: 10px; font-size: 18px; }
+
+    section { padding: 60px 40px; }
+    h2 { font-size: 32px; margin-bottom: 20px; }
+
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .card { background: #151515; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.6); }
+    .card h3 { color: gold; font-size: 24px; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+    .gallery img { width: 100%; border-radius: 12px; }
+
+    footer { background: #111; padding: 20px; text-align: center; color: #aaa; }
+
+    button { padding: 10px 20px; background: gold; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    button:hover { background: white; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h2>CR7 Fan Page</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#stats">Stats</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-box">
+    <h1>Cristiano Ronaldo</h1>
+    <p>One of the greatest footballers of all time.</p>
+    <button onclick="showFact()">Show Random CR7 Fact</button>
+    <p id="fact" style="margin-top:10px;"></p>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Cristiano Ronaldo</h2>
+  <p>Cristiano Ronaldo dos Santos Aveiro is a Portuguese professional footballer known for his incredible goal scoring, athleticism, and discipline. He has played for Sporting CP, Manchester United, Real Madrid, Juventus, Al-Nassr, and the Portugal national team.</p>
+</section>
+
+<section id="stats">
+  <h2>Career Highlights</h2>
+  <div class="stats">
+    <div class="card">
+      <h3>5</h3>
+      <p>Ballon d'Or Awards</p>
+    </div>
+    <div class="card">
+      <h3>800+</h3>
+      <p>Career Goals</p>
+    </div>
+    <div class="card">
+      <h3>5</h3>
+      <p>UEFA Champions League Titles</p>
+    </div>
+    <div class="card">
+      <h3>1</h3>
+      <p>Euro Championship</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Cristiano_Ronaldo_2018_Portugal.jpg" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Cristiano_Ronaldo_2018.jpg" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Cristiano_Ronaldo_2019.jpg" />
+  </div>
+</section>
+
+<footer>
+  <p>Fan-made website. Not official.</p>
+</footer>
+
+<script>
+  const facts = [
+    "Cristiano Ronaldo was born on February 5, 1985 in Madeira, Portugal.",
+    "He is the all-time top scorer for the Portugal national team.",
+    "He has played in the Premier League, La Liga, Serie A, and Saudi Pro League.",
+    "Ronaldo is known for his insane work ethic and training routine.",
+    "He has over 500 million followers across social media."
+  ];
+
+  function showFact() {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    document.getElementById('fact').innerText = randomFact;
+  }
+</script>
+
+</body>
+</html>
